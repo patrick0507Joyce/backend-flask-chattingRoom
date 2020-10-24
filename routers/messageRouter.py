@@ -4,9 +4,10 @@ from app import *
 from flask import Flask, jsonify, session, request
 
 
-@socketio.on('connect')
+@socketio.on('establishConnection')
 def on_connect():
     print("is connected")
+    socketio.emit('connected', request.sid)
 
 @socketio.on('message')
 def on_message(msg):
