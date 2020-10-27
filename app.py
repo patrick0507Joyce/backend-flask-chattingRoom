@@ -12,4 +12,4 @@ def hello_world():
 from routers import messageRouter
 
 if __name__ == '__main__':
-    socketio.run()
+    socketio.run(app)
